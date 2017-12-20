@@ -1,0 +1,33 @@
+version: "2"
+services:
+  web:
+    depends_on:
+      - db
+    build:
+      context: .
+      dockerfile: docker/local/Dockerfile
+    environment:
+      DEBUG: "True"
+    volumes:
+      - ./app:/app
+    ports:
+      - "8000:8000"
+    links:
+      - db
+    command: /venv/bin/uwsgi --ini /app/uwsgi.dev.ini
+  db:
+    image: postgres:10
+    environment:
+      POSTGRES_DB: dev_db
+      POSTGRES_USER: dev_user
+      POSTGRES_PASSWORD: dev_password
+    ports:
+       - "5432:5432"
+  docs:
+    # This uses a fairly large image - should be straight forward to build out own
+    image: pardahlman/sphinx
+    ports:
+      - "8080:8000"
+    volumes:
+      - ./docs:/docs
+

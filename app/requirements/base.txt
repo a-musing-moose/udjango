@@ -1,0 +1,9 @@
+# django-rest-hooks 1.4.3 does not include support for Django >= 2.0, so using master :-(
+# django-rest-hooks~=1.4.3
+git+https://github.com/zapier/django-rest-hooks.git
+
+djangorestframework~=3.7.3
+django~=2.0
+envparse~=0.2.0
+psycopg2~=2.7.3.2
+uwsgi~=2.0.15
