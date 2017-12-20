@@ -79,7 +79,7 @@ Brain Dump Log
 2017-12-19:
 	I tried writting something and compiling with Nuitka, however the standalone compilation does not statically compile in libraries, you would need to copy them all around as well which is not ideal.
 
-	So I wrote something in Go. This does compile to a single, statically linked executable and allows cross compiling, which is nice. ``rid`` (run in docker) is the tool and it basically takes all command line args and runs them inside the docker container instead.  It is a seriously simplistic but appears to work.
+	So I wrote something in Go. This does compile to a single, statically linked executable and allows cross compiling, which is nice. rapyd_ (Run A Python in Docker) is the tool and it basically takes all command line args and runs them inside the docker container instead.  It is a seriously simplistic but appears to work.
 
 	I also managed (with a little tweeking) to get the whole setup running in PyCharm, including the debugger. Which does remind me that we probably need a way of running a debugger when not using PyCharm.
 
