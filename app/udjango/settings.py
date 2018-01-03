@@ -9,9 +9,9 @@ https://docs.djangoproject.com/en/dev/ref/settings/
 """
 
 from pathlib import Path
+from typing import Dict, Optional
 
 from envparse import env
-
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = Path(__file__).parents[1]
@@ -133,7 +133,7 @@ STATIC_URL = '/static/'
 STATIC_ROOT = '/static/'
 
 # Webhook Configuration
-HOOK_EVENTS = {}
+HOOK_EVENTS: Dict[str, Optional[str]] = {}
 
 if DEBUG:
     from . import dev

@@ -1,4 +1,3 @@
-
 def uwsgi_reloading():
     try:
         import uwsgi
@@ -13,7 +12,7 @@ def uwsgi_reloading():
 
         print("UWSGI RELOADING ENABLED")
     except Exception as e:
-        print(f"WSGI RELOADING NOT AVAILABLE: {e}")
+        print("WSGI RELOADING NOT AVAILABLE: {}".format(e))
         return
 
 

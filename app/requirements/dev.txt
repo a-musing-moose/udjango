@@ -1,6 +1,7 @@
 -r base.txt
 django-coverage
 ipython
+mypy
 pudb
 pytest
 pytest-coverage

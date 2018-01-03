@@ -32,8 +32,8 @@ The Sphinx_ documentation service will also automatically rebuild the documentat
 
 
 
-Develoment Tasks
-----------------
+Development Tasks
+-----------------
 
 To make running everything inside a Docker_ container slightly less painful the project contains a ``Makefile`` with a number of targets, described below.
 
@@ -82,6 +82,11 @@ Brain Dump Log
 	So I wrote something in Go. This does compile to a single, statically linked executable and allows cross compiling, which is nice. rapyd_ (Run A Python in Docker) is the tool and it basically takes all command line args and runs them inside the docker container instead.  It is a seriously simplistic but appears to work.
 
 	I also managed (with a little tweeking) to get the whole setup running in PyCharm, including the debugger. Which does remind me that we probably need a way of running a debugger when not using PyCharm.
+
+2018-01-03:
+	Using docker compose for the web server I think mean I can just use ``pudb`` for example, as long as I assign an interactive terminal to the ``web`` service.
+
+	I also wonder if I should start doing type annotations and add a ``mypy`` target. I don't think that Django yet has annotation or that any have been added to ``typeshed``, which is a bit of a shame.
 
 .. _docker: https://www.docker.com/
 .. _`docker compose`: https://docs.docker.com/compose/install/

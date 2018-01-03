@@ -24,8 +24,7 @@ services:
     ports:
        - "5432:5432"
   docs:
-    # This uses a fairly large image - should be straight forward to build out own
-    image: pardahlman/sphinx
+    image: moose/sphinx-server
     ports:
       - "8080:8000"
     volumes:

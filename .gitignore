@@ -17,3 +17,4 @@ docs/_build
 docs/_build_html
 htmlcov
 version.json
+.mypy_cache

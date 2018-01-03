@@ -7,8 +7,9 @@ COPY app/requirements /app/requirements
 
 RUN apk add --no-cache postgresql-libs \
     && apk add --no-cache --virtual build-deps build-base linux-headers postgresql-dev \
-    && /venv/bin/pip install -r /app/requirements/deployment.txt \
+    && /venv/bin/pip install -r /app/requirements/base.txt \
     && apk del build-deps
+
 COPY src /app/
 
 RUN /venv/bin/python /app/manage.py collectstatic --noinput
