@@ -5,7 +5,7 @@ services:
       - db
     build:
       context: .
-      dockerfile: docker/local/Dockerfile
+      dockerfile: Dockerfile.local
     environment:
       DEBUG: "True"
     volumes:
@@ -14,7 +14,7 @@ services:
       - "8000:8000"
     links:
       - db
-    command: /venv/bin/uwsgi --ini /app/uwsgi.dev.ini
+    command: /venv/bin/uwsgi --ini /app/uwsgi.local.ini
   db:
     image: postgres:10
     environment:

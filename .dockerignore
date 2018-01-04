@@ -18,3 +18,5 @@ Dockerfile
 htmlcov
 Makefile
 setup.cfg
+app/tests
+app/features

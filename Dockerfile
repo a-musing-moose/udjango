@@ -10,7 +10,7 @@ RUN apk add --no-cache postgresql-libs \
     && /venv/bin/pip install -r /app/requirements/base.txt \
     && apk del build-deps
 
-COPY src /app/
+COPY app /app/
 
 RUN /venv/bin/python /app/manage.py collectstatic --noinput
 EXPOSE 80

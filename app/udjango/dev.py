@@ -1,4 +1,4 @@
-def uwsgi_reloading():
+def uwsgi_reloading() -> None:
     try:
         import uwsgi
         from uwsgidecorators import timer
@@ -16,5 +16,5 @@ def uwsgi_reloading():
         return
 
 
-def init():
+def init() -> None:
     uwsgi_reloading()

@@ -69,22 +69,49 @@ This project provides yapf_ to automatically format Python code to our (``pep8``
 	make format
 
 
+Static Analysis
++++++++++++++++
+
+MyPy_ has been included to do static type checking. To run mypy_:
+
+.. code-block:: bash
+
+	make static
+
+
+Behavioural Tests
++++++++++++++++++
+
+Behavioural testing is supported with behave_
+
+.. code-block:: bash
+
+	make behave
+
+
+Building a Docker Image
++++++++++++++++++++++++
+
+.. code-block:: bash
+
+	make build
+
 
 Brain Dump Log
 --------------
 
 2017-12-19:
-	The ``Makefile`` approach to running stuff in the container is a bit cumbersome. In particular, where I want to pass through commandline options. e.g. having a Django management command target is not really usable unless I specify each one separately. Not a good solution. Could something else be used which is more flexible but still doesn't require Python to be installed.  Perhaps a simple cli compiled with nuitka?
+	The ``Makefile`` approach to running stuff in the container is a bit cumbersome. In particular, where I want to pass through command line options. e.g. having a Django management command target is not really usable unless I specify each one separately. Not a good solution. Could something else be used which is more flexible but still doesn't require Python to be installed.  Perhaps a simple cli compiled with nuitka?
 
 2017-12-19:
-	I tried writting something and compiling with Nuitka, however the standalone compilation does not statically compile in libraries, you would need to copy them all around as well which is not ideal.
+	I tried writing something and compiling with Nuitka, however the standalone compilation does not statically compile in libraries, you would need to copy them all around as well which is not ideal.
 
 	So I wrote something in Go. This does compile to a single, statically linked executable and allows cross compiling, which is nice. rapyd_ (Run A Python in Docker) is the tool and it basically takes all command line args and runs them inside the docker container instead.  It is a seriously simplistic but appears to work.
 
-	I also managed (with a little tweeking) to get the whole setup running in PyCharm, including the debugger. Which does remind me that we probably need a way of running a debugger when not using PyCharm.
+	I also managed (with a little tweaking) to get the whole setup running in PyCharm, including the debugger. Which does remind me that we probably need a way of running a debugger when not using PyCharm.
 
 2018-01-03:
-	Using docker compose for the web server I think mean I can just use ``pudb`` for example, as long as I assign an interactive terminal to the ``web`` service.
+	Using docker compose for the web server I think it means I can just use ``pudb`` for example, as long as I assign an interactive terminal to the ``web`` service.
 
 	I also wonder if I should start doing type annotations and add a ``mypy`` target. I don't think that Django yet has annotation or that any have been added to ``typeshed``, which is a bit of a shame.
 
@@ -97,3 +124,5 @@ Brain Dump Log
 .. _`localhost:8080`: http://localhost:8080
 .. _`py.test`: https://pytest-django.readthedocs.io/en/latest/
 .. _yapf: https://github.com/google/yapf
+.. _mypy: http://mypy-lang.org/
+.. _behave: https://pythonhosted.org/behave/

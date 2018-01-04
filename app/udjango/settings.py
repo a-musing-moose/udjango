@@ -13,6 +13,7 @@ from typing import Dict, Optional
 
 from envparse import env
 
+
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = Path(__file__).parents[1]
 
